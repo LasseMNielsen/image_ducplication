@@ -123,12 +123,8 @@ def main():
     files to the datetime they were taken.
     """
     parser = argparse.ArgumentParser(description=description)
-    parser.add_argument("--path", help="comma separated list of paths to scan")
+    parser.add_argument("--path", help="comma separated list of paths to scan",required=True)
     args = parser.parse_args()
-
-    if args.path is None:
-        logger.error('path arg is required')
-        exit(1)
 
     path_list = args.path.split(',')
 
